@@ -20,18 +20,8 @@
       "enabled": false
     },
     {
-      "matchManagers": ["composer"],
-      "matchDepTypes": ["require"],
-      "matchPackageNames": ["php"],
-      "enabled": false
-    },
-    {
-      "matchUpdateTypes": [
-        "minor",
-        "patch",
-        "pin"
-      ],
-      "enabled": true
+      "groupName": "GitHub Actions",
+      "matchManagers": ["github-actions"]
     }
   ],
   "timezone": "America/Detroit"
