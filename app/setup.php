@@ -85,6 +85,7 @@ add_action('after_setup_theme', function () {
      */
     register_nav_menus([
         'primary_navigation' => __('Primary Navigation', 'sage'),
+        'blog_navigation' => __('Blog Navigation', 'sage'),
     ]);
 
     /**
@@ -136,6 +137,13 @@ add_action('after_setup_theme', function () {
      * @link https://developer.wordpress.org/reference/functions/add_theme_support/#customize-selective-refresh-widgets
      */
     add_theme_support('customize-selective-refresh-widgets');
+
+    /**
+     * Enable WooCommerce support.
+     *
+     * @link https://developer.woocommerce.com/docs/
+     */
+    add_theme_support('woocommerce');
 }, 20);
 
 /**
@@ -159,5 +167,10 @@ add_action('widgets_init', function () {
     register_sidebar([
         'name' => __('Footer', 'sage'),
         'id' => 'sidebar-footer',
+    ] + $config);
+
+    register_sidebar([
+        'name' => __('Store sidebar', 'sage'),
+        'id' => 'sidebar-store',
     ] + $config);
 });
